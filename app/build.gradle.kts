@@ -1,8 +1,8 @@
 plugins {
-    kotlin("kapt")
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.dagger.hilt.android")
+    kotlin("kapt")
 }
 
 android {
@@ -49,6 +49,9 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    hilt {
+        enableAggregatingTask = true
+    }
 }
 
 dependencies {
@@ -89,4 +92,8 @@ dependencies {
     testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
     //Mockk
     testImplementation("io.mockk:mockk:1.13.5")
+    //Domain Module
+    implementation(project(path = ":domain"))
+    //Data Module
+    implementation(project(path = ":data"))
 }
