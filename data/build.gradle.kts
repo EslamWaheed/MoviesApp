@@ -35,6 +35,7 @@ android {
     hilt {
         enableAggregatingTask = true
     }
+    kapt { generateStubs = true }
 }
 
 dependencies {
@@ -46,4 +47,11 @@ dependencies {
     //Hilt
     implementation("com.google.dagger:hilt-android:2.51")
     kapt("com.google.dagger:hilt-android-compiler:2.48")
+    //Chucker
+    debugImplementation("com.github.chuckerteam.chucker:library:4.0.0")
+    releaseImplementation("com.github.chuckerteam.chucker:library-no-op:4.0.0")
+    //Domain Module
+    implementation(project(path = ":domain"))
+    //Network Module
+    implementation(project(path = ":network"))
 }

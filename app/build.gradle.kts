@@ -52,6 +52,7 @@ android {
     hilt {
         enableAggregatingTask = true
     }
+    kapt { generateStubs = true }
 }
 
 dependencies {
