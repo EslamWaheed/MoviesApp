@@ -12,6 +12,7 @@ class NowPlayingMapper @Inject constructor() :
             map {
                 with(it) {
                     NowPlaying(
+                        id = id,
                         title = title,
                         releaseDate = releaseDate,
                         posterImage = posterPath

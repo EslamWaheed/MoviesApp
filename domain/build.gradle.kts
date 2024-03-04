@@ -32,10 +32,6 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    hilt {
-        enableAggregatingTask = true
-    }
-    kapt { generateStubs = true }
 }
 
 dependencies {
@@ -46,5 +42,6 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     //Hilt
     implementation("com.google.dagger:hilt-android:2.51")
-    kapt("com.google.dagger:hilt-android-compiler:2.48")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+    kapt("com.google.dagger:hilt-android-compiler:2.51")
 }

@@ -32,10 +32,6 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    hilt {
-        enableAggregatingTask = true
-    }
-    kapt { generateStubs = true }
 }
 
 dependencies {
@@ -46,12 +42,11 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     //Hilt
     implementation("com.google.dagger:hilt-android:2.51")
-    kapt("com.google.dagger:hilt-android-compiler:2.48")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+    kapt("com.google.dagger:hilt-android-compiler:2.51")
     //Chucker
     debugImplementation("com.github.chuckerteam.chucker:library:4.0.0")
     releaseImplementation("com.github.chuckerteam.chucker:library-no-op:4.0.0")
     //Domain Module
     implementation(project(path = ":domain"))
-    //Network Module
-    implementation(project(path = ":network"))
 }
