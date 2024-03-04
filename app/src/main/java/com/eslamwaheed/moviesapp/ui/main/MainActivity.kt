@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.eslamwaheed.moviesapp.ui.main.view.MovieScreen
+import com.eslamwaheed.moviesapp.ui.main.MainScreen
 import com.eslamwaheed.moviesapp.ui.theme.MoviesAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MovieScreen()
+                    MainScreen()
                 }
             }
         }
