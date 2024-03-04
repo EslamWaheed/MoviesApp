@@ -1,7 +1,7 @@
 package com.eslamwaheed.moviesapp.di
 
-import com.eslamwaheed.data.repo.MovieListsRepoImpl
-import com.eslamwaheed.domain.repo.MovieListsRepo
+import com.eslamwaheed.data.repo.MoviesRepoImpl
+import com.eslamwaheed.domain.repo.MoviesRepo
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -11,5 +11,5 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 interface RepoModule {
     @Binds
-    fun bindsMovieListsRepoImpl(movieListsRepoImpl: MovieListsRepoImpl): MovieListsRepo
+    fun bindsMovieListsRepoImpl(movieListsRepoImpl: MoviesRepoImpl): MoviesRepo
 }

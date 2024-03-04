@@ -1,4 +1,4 @@
-package com.eslamwaheed.moviesapp.ui.main.view
+package com.eslamwaheed.moviesapp.ui.movies.view
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -20,16 +20,20 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.eslamwaheed.data.remote.API
 import com.eslamwaheed.domain.model.nowplaying.NowPlaying
-import com.eslamwaheed.moviesapp.ui.main.viewmodel.MainSideEffect
-import com.eslamwaheed.moviesapp.ui.main.viewmodel.MainViewModel
+import com.eslamwaheed.moviesapp.navigation.NavScreen
+import com.eslamwaheed.moviesapp.ui.movies.viewmodel.MainSideEffect
+import com.eslamwaheed.moviesapp.ui.movies.viewmodel.MainViewModel
 import org.orbitmvi.orbit.compose.collectAsState
 import org.orbitmvi.orbit.compose.collectSideEffect
 
 @Composable
-fun MovieScreen() {
+fun MovieScreen(
+    navController: NavController
+) {
     val viewModel: MainViewModel = hiltViewModel()
 
     val state by viewModel.collectAsState()
@@ -37,7 +41,7 @@ fun MovieScreen() {
     viewModel.collectSideEffect {
         when (it) {
             is MainSideEffect.NavigateToMovieDetails -> {
-
+                navController.navigate("${NavScreen.MovieDetails.route}/${it.id}")
             }
         }
     }

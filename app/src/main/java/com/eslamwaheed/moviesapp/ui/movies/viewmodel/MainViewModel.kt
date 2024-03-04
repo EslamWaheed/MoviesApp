@@ -1,4 +1,4 @@
-package com.eslamwaheed.moviesapp.ui.main.viewmodel
+package com.eslamwaheed.moviesapp.ui.movies.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.eslamwaheed.domain.usecase.GetNowPlayingListUseCase

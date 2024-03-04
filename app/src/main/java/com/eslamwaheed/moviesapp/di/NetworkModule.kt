@@ -3,7 +3,7 @@ package com.eslamwaheed.moviesapp.di
 import android.content.Context
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.eslamwaheed.data.remote.API
-import com.eslamwaheed.data.remote.MoviesListApiServices
+import com.eslamwaheed.data.remote.MoviesApiServices
 import com.eslamwaheed.network.networkerrors.ResultCallAdapterFactory
 import dagger.Module
 import dagger.Provides
@@ -29,7 +29,7 @@ object NetworkModule {
                 chain.proceed(
                     chain.request().newBuilder().header(
                         "Authorization",
-                        ""
+                        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5N2QwMGVjMmNlNzNkMTJlZDYwNWU2MGZmM2JiYThjYyIsInN1YiI6IjVhZWYxYTM3MGUwYTI2MWQ5NTAwNjBlMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ARsR2fL3kbY8ZFZwBEL-e7LFNnfjLg1eRABU1RrpseI"
                     ).build()
                 )
             }.connectTimeout(60, TimeUnit.SECONDS)
@@ -66,7 +66,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun providesMoviesListApiServices(retrofit: Retrofit): MoviesListApiServices {
-        return retrofit.create(MoviesListApiServices::class.java)
+    fun providesMoviesListApiServices(retrofit: Retrofit): MoviesApiServices {
+        return retrofit.create(MoviesApiServices::class.java)
     }
 }

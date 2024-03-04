@@ -1,4 +1,4 @@
-package com.eslamwaheed.moviesapp
+package com.eslamwaheed.moviesapp.ui.main
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.eslamwaheed.moviesapp.ui.main.MainScreen
 import com.eslamwaheed.moviesapp.ui.theme.MoviesAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
