@@ -44,4 +44,12 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.51")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
     kapt("com.google.dagger:hilt-android-compiler:2.51")
+    //Fixture
+    testImplementation("com.appmattus.fixture:fixture:1.2.0")
+    //Mockito
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.1")
+    //Mockk
+    testImplementation("io.mockk:mockk:1.13.10")
+    //Test Coroutines
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0")
 }
