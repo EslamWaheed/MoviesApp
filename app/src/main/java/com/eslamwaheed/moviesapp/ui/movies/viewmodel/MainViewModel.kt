@@ -24,13 +24,12 @@ class MainViewModel @Inject constructor(
         reduce { state.copy(isLoading = true) }
         getNowPlayingListUseCase.invoke().fold(
             {
-                reduce { state.copy(nowPlayingList = it) }
+                reduce { state.copy(isLoading = false, nowPlayingList = it) }
             },
             {
                 //handel error
             }
         )
-        reduce { state.copy(isLoading = false) }
     }
 
     fun onPosterClicked(id: Int) = intent {
