@@ -14,8 +14,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MovieDetailsViewModel @Inject constructor(
     private val getMovieDetailsUseCase: GetMovieDetailsUseCase
-) :
-    ContainerHost<MovieDetailsState, MovieDetailsSideEffect>, ViewModel() {
+) : ContainerHost<MovieDetailsState, MovieDetailsSideEffect>, ViewModel() {
     override val container: Container<MovieDetailsState, MovieDetailsSideEffect> = container(
         MovieDetailsState()
     )
@@ -24,13 +23,12 @@ class MovieDetailsViewModel @Inject constructor(
         reduce { state.copy(isLoading = true) }
         getMovieDetailsUseCase.invoke(id).fold(
             {
-                reduce { state.copy(movieDetails = it) }
+                reduce { state.copy(isLoading = false, movieDetails = it) }
             },
             {
                 //handel error
             }
         )
-        reduce { state.copy(isLoading = false) }
     }
 
     fun onBackPressed() = intent {
