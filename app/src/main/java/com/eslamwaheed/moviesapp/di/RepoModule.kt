@@ -1,4 +1,4 @@
-package com.eslamwaheed.data.di
+package com.eslamwaheed.moviesapp.di
 
 import com.eslamwaheed.data.repo.MovieListsRepoImpl
 import com.eslamwaheed.domain.repo.MovieListsRepo

@@ -1,7 +1,8 @@
-package com.eslamwaheed.data.di
+package com.eslamwaheed.moviesapp.di
 
 import android.content.Context
 import com.chuckerteam.chucker.api.ChuckerInterceptor
+import com.eslamwaheed.data.remote.API
 import com.eslamwaheed.data.remote.MoviesListApiServices
 import com.eslamwaheed.network.networkerrors.ResultCallAdapterFactory
 import dagger.Module
@@ -56,7 +57,7 @@ object NetworkModule {
         resultCallAdapterFactory: ResultCallAdapterFactory
     ): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://api.themoviedb.org/3/")
+            .baseUrl(API.BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(resultCallAdapterFactory)
